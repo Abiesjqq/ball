@@ -11,17 +11,17 @@ int main() {
 	initgraph(width, height, 1); //初始化界面
 
 	int ball_count = 6;
-	Ball ball1 = { width / 3,height / 5,40,"hhh",{232,211,192} };//初始化小球
-	draw_ball(&ball1);	
-	Ball ball2 = { width / 2,height / 4,40,"hhh",{207,195,169} };
+	Ball ball1 = { width / 3.0,height / 5.0,40,"hhh",{232,211,192} };//初始化小球
+	draw_ball(&ball1);
+	Ball ball2 = { width / 2.0,height / 4.0,40,"hhh",{207,195,169} };
 	draw_ball(&ball2);
-	Ball ball3 = { width / 3,height / 3,40,"hhh",{132,155,145} };
+	Ball ball3 = { width / 3.0,height / 3.0,40,"hhh",{132,155,145} };
 	draw_ball(&ball3);
-	Ball ball4 = { width / 2,height / 2,40,"hhh",{194,206,182} };
+	Ball ball4 = { width / 2.0,height / 2.0,40,"hhh",{194,206,182} };
 	draw_ball(&ball4);
-	Ball ball5 = { width / 7,height / 4,40,"hhh",{181,124,130} };
+	Ball ball5 = { width / 7.0,height / 4.0,40,"hhh",{181,124,130} };
 	draw_ball(&ball5);
-	Ball ball6 = { width / 4,height / 3,40,"hhh",{136,135,141} };
+	Ball ball6 = { width / 4.0,height / 3.0,40,"hhh",{136,135,141} };
 	draw_ball(&ball6);
 	Ball* balls[] = { &ball1,&ball2,&ball3,&ball4,&ball5,&ball6 };
 

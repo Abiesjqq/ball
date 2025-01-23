@@ -18,7 +18,7 @@ typedef struct {
 }Color;
 
 typedef struct ball {
-	int x, y, radius;
+	double x, y, radius;
 	char text[10];
 	Color color;
 	double vx, vy;
