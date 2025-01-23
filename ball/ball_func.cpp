@@ -1,4 +1,8 @@
+#include <graphics.h>
+#include <windows.h>
+#include <math.h>
 #include "ball.h"
+
 
 //画球
 void draw_ball(Ball* ball) {
@@ -37,6 +41,20 @@ double distance(Ball b1, Ball b2) {
 void collide_balls(Ball* b1, Ball* b2) {
 	if (distance(*b1, *b2) > b1->radius + b2->radius) return;
 
+	double overlap = (b1->radius + b2->radius) - distance(*b1, *b2); //避免重叠
+	if (overlap > -(1e-3)) {
+		double dx = b1->x - b2->x;
+		double dy = b1->y - b2->y;
+		double dist = sqrt(dx * dx + dy * dy);
+		double cos_lap = dx / dist;
+		double sin_lap = dy / dist;
+
+		b1->x += dist * cos_lap / 2;
+		b1->y += dist * sin_lap / 2;
+		b2->x -= dist * cos_lap / 2;
+		b2->y -= dist * sin_lap / 2;
+	}
+
 	double new_vx1 = ((b1->mass - b2->mass) * b1->vx + 2 * b2->mass * b2->vx) / (b1->mass + b2->mass); //完全弹性碰撞后速度
 	double new_vy1 = ((b1->mass - b2->mass) * b1->vy + 2 * b2->mass * b2->vy) / (b1->mass + b2->mass);
 	double new_vx2 = ((b2->mass - b1->mass) * b2->vx + 2 * b1->mass * b1->vx) / (b1->mass + b2->mass);
@@ -47,18 +65,6 @@ void collide_balls(Ball* b1, Ball* b2) {
 	b2->vx = new_vx2;
 	b2->vy = new_vy2;
 
-	double overlap = (b1->radius + b2->radius) - distance(*b1, *b2); //避免重叠
-	if (overlap > -(1e-3)) {
-		double dx = b1->x - b2->x;
-		double dy = b1->y - b2->y;
-		double cos_lap = dx / overlap;
-		double sin_lap = dy / overlap;
-
-		b1->x -= overlap * cos_lap / 2;
-		b1->y -= overlap * sin_lap / 2;
-		b2->x += overlap * cos_lap / 2;
-		b2->y += overlap * sin_lap / 2;
-	}
 }
 
 

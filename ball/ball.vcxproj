@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
-    <ClCompile Include="ball_func.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ball_func.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ball.h" />

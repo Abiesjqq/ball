@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ball_func.c">
+    <ClCompile Include="ball_func.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

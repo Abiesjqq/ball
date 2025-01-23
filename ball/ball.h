@@ -1,23 +1,15 @@
 #ifndef BALL_H
 #define BALL_H
 
-#include <graphics.h>
-#include <conio.h>
-#include <stdio.h>
-#include <time.h>
 #include <windows.h>
-#include <math.h>
+#include <graphics.h>
 
-const double PI = 3.14;
-const int DENSITY = 1;
-const int width = 800;
-const int height = 600;
-const int g = 0;
-int vx = 5;
-int vy = 7;
-int radius = 40;
-int sleep_time = 6;
-
+#define PI 3.14
+#define DENSITY 1
+#define width 800
+#define height 600
+#define g 0.1
+#define sleep_time 10
 
 typedef struct {
 	BYTE byRed;
